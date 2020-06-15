@@ -1,0 +1,34 @@
+{
+    "name": "cowegis/cowegis-contao-multilingual-bundle",
+    "type": "contao-bundle",
+    "description": "Cowegis - Content Web GIS Provider Layer Bundle For Contao",
+    "license": "LGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "David Molineus",
+            "email": "david.molineus@netzmacht.de"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "contao-community-alliance/meta-palettes": "^2.0",
+        "contao/core-bundle": "^4.9",
+        "cowegis/cowegis-core": "^1.0@dev",
+        "terminal42/dc_multilingual": "^4.1",
+        "symfony/http-kernel": "^4.4"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "~2.0",
+        "doctrine/coding-standard": "^7.0"
+    },
+    "extra": {
+        "contao-manager-plugin": "Cowegis\\Bundle\\ContaoMultilingual\\ContaoManager\\Plugin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cowegis\\Bundle\\ContaoMultilingual\\": "src/"
+        }
+    }
+}
