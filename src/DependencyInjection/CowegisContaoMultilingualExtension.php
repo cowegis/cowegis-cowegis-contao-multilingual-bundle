@@ -11,10 +11,11 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
 final class CowegisContaoMultilingualExtension extends Extension
 {
-    public function load(array $configs, ContainerBuilder $container) : void
+    /** {@inheritDoc} */
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs);
+        $config        = $this->processConfiguration($configuration, $configs);
 
         if (empty($config['default_locale']) || empty($config['locales'])) {
             return;

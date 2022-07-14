@@ -1,37 +1,57 @@
 {
-    "name": "cowegis/cowegis-contao-multilingual-bundle",
-    "type": "contao-bundle",
-    "description": "Cowegis - Content Web GIS Provider Layer Bundle For Contao",
-    "license": "LGPL-3.0-or-later",
-    "authors": [
-        {
-            "name": "David Molineus",
-            "email": "david.molineus@netzmacht.de"
-        }
-    ],
-    "require": {
-        "php": "^7.2",
-        "ext-json": "*",
-        "ext-pdo": "*",
-        "contao-community-alliance/meta-palettes": "^2.0",
-        "contao/core-bundle": "^4.9",
-        "cowegis/cowegis-core": "^1.0@dev",
-        "terminal42/dc_multilingual": "^4.1",
-        "symfony/http-kernel": "^4.4"
-    },
-    "require-dev": {
-        "contao/manager-plugin": "~2.0",
-        "doctrine/coding-standard": "^7.0"
-    },
-    "extra": {
-        "contao-manager-plugin": "Cowegis\\Bundle\\ContaoMultilingual\\ContaoManager\\Plugin",
-        "branch-alias": {
-            "dev-master": "1.0.x-dev"
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "Cowegis\\Bundle\\ContaoMultilingual\\": "src/"
-        }
+  "name": "cowegis/cowegis-contao-multilingual-bundle",
+  "description": "Cowegis - Content Web GIS Provider Layer Bundle For Contao",
+  "license": "LGPL-3.0-or-later",
+  "type": "contao-bundle",
+  "authors": [
+    {
+      "name": "David Molineus",
+      "email": "david.molineus@netzmacht.de"
     }
+  ],
+  "require": {
+    "php": "^7.4 || ^8.0",
+    "ext-json": "*",
+    "ext-pdo": "*",
+    "contao-community-alliance/meta-palettes": "^2.0",
+    "contao/core-bundle": "^4.9",
+    "cowegis/cowegis-contao-bundle": "^1.0@dev",
+    "cowegis/cowegis-core": "^1.0@dev",
+    "netzmacht/contao-toolkit": "^3.8",
+    "symfony/config": "^4.4 || ^5.4",
+    "symfony/dependency-injection": "^4.4 || ^5.4",
+    "symfony/http-kernel": "^4.4 || ^5.4",
+    "terminal42/dc_multilingual": "^4.1"
+  },
+  "require-dev": {
+    "contao/manager-plugin": "^2.0",
+    "doctrine/coding-standard": "^9.0",
+    "phpcq/runner-bootstrap": "^1.0@dev"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://token:ANU5iWbJuovTQ5j4Mre31crK5Dx36OscQ33uB7tzHtcDvTO55bAkRl8M8P0Mvp9r@packages.netzmacht.de/r/"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Cowegis\\Bundle\\ContaoMultilingual\\": "src/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "contao-components/installer": true,
+      "contao/manager-plugin": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    },
+    "contao-manager-plugin": "Cowegis\\Bundle\\ContaoMultilingual\\ContaoManager\\Plugin"
+  }
 }

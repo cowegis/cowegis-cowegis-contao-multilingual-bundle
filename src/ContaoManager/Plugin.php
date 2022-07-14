@@ -15,19 +15,22 @@ use Cowegis\Bundle\ContaoMultilingual\Model\ControlModel;
 use Cowegis\Bundle\ContaoMultilingual\Model\LayerModel;
 use Cowegis\Bundle\ContaoMultilingual\Model\MarkerModel;
 use Terminal42\DcMultilingualBundle\Terminal42DcMultilingualBundle;
+
 use function array_unshift;
 
 final class Plugin implements BundlePluginInterface, ExtensionPluginInterface
 {
-    public function getBundles(ParserInterface $parser) : array
+    /** {@inheritDoc} */
+    public function getBundles(ParserInterface $parser): array
     {
         return [
             BundleConfig::create(CowegisContaoMultilingualBundle::class)
-                ->setLoadAfter([CowegisContaoBundle::class, Terminal42DcMultilingualBundle::class])
+                ->setLoadAfter([CowegisContaoBundle::class, Terminal42DcMultilingualBundle::class]),
         ];
     }
 
-    public function getExtensionConfig($extensionName, array $extensionConfigs, ContainerBuilder $container) : array
+    /** {@inheritDoc} */
+    public function getExtensionConfig($extensionName, array $extensionConfigs, ContainerBuilder $container): array
     {
         if ($extensionName !== 'cowegis_contao_multilingual') {
             return $extensionConfigs;

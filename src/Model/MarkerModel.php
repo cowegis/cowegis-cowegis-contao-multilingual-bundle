@@ -11,7 +11,8 @@ class MarkerModel extends UntranslatedMarkerModel
 {
     use MultilingualTrait;
 
-    public function id() : int
+    /** @SuppressWarnings(PHPMD.ShortMethodName) */
+    public function id(): int
     {
         return (int) $this->getLanguageId();
     }

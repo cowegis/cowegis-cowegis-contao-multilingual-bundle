@@ -4,14 +4,21 @@ declare(strict_types=1);
 
 namespace Cowegis\Bundle\ContaoMultilingual\DependencyInjection;
 
+use Contao\Model;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
+/**
+ * @psalm-type TDataContainerConfig = array{
+ *     model: class-string<Model>,
+ *     fields: array<string, list<string>|bool>
+ * }
+ */
 final class Configuration implements ConfigurationInterface
 {
-    public function getConfigTreeBuilder() : TreeBuilder
+    public function getConfigTreeBuilder(): TreeBuilder
     {
-        $builder = new TreeBuilder('cowegis_contao_multilingual');
+        $builder  = new TreeBuilder('cowegis_contao_multilingual');
         $rootNode = $builder->getRootNode();
 
         $rootNode

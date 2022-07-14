@@ -11,7 +11,8 @@ class LayerModel extends UntranslatedLayerModel
 {
     use MultilingualTrait;
 
-    public function id() : int
+    /** @SuppressWarnings(PHPMD.ShortMethodName) */
+    public function id(): int
     {
         return (int) $this->getLanguageId();
     }

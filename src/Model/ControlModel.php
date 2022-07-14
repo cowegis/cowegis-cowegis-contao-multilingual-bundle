@@ -10,4 +10,10 @@ use Terminal42\DcMultilingualBundle\Model\MultilingualTrait;
 final class ControlModel extends UntranslatedControlModel
 {
     use MultilingualTrait;
+
+    /** @SuppressWarnings(PHPMD.ShortMethodName) */
+    public function id(): int
+    {
+        return (int) $this->getLanguageId();
+    }
 }
