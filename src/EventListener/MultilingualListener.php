@@ -9,31 +9,19 @@ use Netzmacht\Contao\Toolkit\Dca\Manager as DcaManager;
 
 use function is_array;
 
-/**
- * @psalm-import-type TDataContainerConfig from Configuration
- */
-final class MultilingualListener
+/** @psalm-import-type TDataContainerConfig from Configuration */
+final readonly class MultilingualListener
 {
-    private DcaManager $dcaManager;
-
-    /** @var array<string,TDataContainerConfig> */
-    private array $dataContainers;
-
-    /** @var string[] */
-    private array $locales;
-
-    private string $fallbackLocale;
-
     /**
      * @param array<string,TDataContainerConfig> $dataContainers
      * @param string[]                           $locales
      */
-    public function __construct(DcaManager $dcaManager, array $dataContainers, array $locales, string $fallbackLocale)
-    {
-        $this->dcaManager     = $dcaManager;
-        $this->dataContainers = $dataContainers;
-        $this->locales        = $locales;
-        $this->fallbackLocale = $fallbackLocale;
+    public function __construct(
+        private DcaManager $dcaManager,
+        private array $dataContainers,
+        private array $locales,
+        private string $fallbackLocale,
+    ) {
     }
 
     /** @SuppressWarnings(PHPMD.Superglobals) */
@@ -66,7 +54,7 @@ final class MultilingualListener
                 $config['sql']['keys']['language'] = 'index';
 
                 return $config;
-            }
+            },
         );
 
         $definition->set(['fields', 'langPid', 'sql'], "int(10) unsigned NOT NULL default '0'");

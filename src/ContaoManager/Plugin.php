@@ -73,7 +73,7 @@ final class Plugin implements BundlePluginInterface, ExtensionPluginInterface
                         ],
                     ],
                 ],
-            ]
+            ],
         );
 
         return $extensionConfigs;
