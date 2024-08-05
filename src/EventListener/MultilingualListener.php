@@ -6,6 +6,7 @@ namespace Cowegis\Bundle\ContaoMultilingual\EventListener;
 
 use Cowegis\Bundle\ContaoMultilingual\DependencyInjection\Configuration;
 use Netzmacht\Contao\Toolkit\Dca\Manager as DcaManager;
+use Terminal42\DcMultilingualBundle\Driver;
 
 use function is_array;
 
@@ -47,7 +48,7 @@ final readonly class MultilingualListener
              * @return array<string,mixed>
              */
             function (array $config): array {
-                $config['dataContainer']           = 'Multilingual';
+                $config['dataContainer']           = Driver::class;
                 $config['languages']               = $this->locales;
                 $config['fallbackLang']            = $this->fallbackLocale;
                 $config['sql']['keys']['langPid']  = 'index';
