@@ -17,7 +17,7 @@
     "contao/core-bundle": "^4.13 || ^5.3",
     "cowegis/cowegis-contao-bundle": "^1.0",
     "cowegis/cowegis-core": "^1.0",
-    "netzmacht/contao-toolkit": "^3.8 || ^4.0",
+    "netzmacht/contao-toolkit": "^3.9 || ^4.0",
     "symfony/config": "^5.4 || ^6.4",
     "symfony/dependency-injection": "^5.4 || ^6.4",
     "symfony/http-kernel": "^5.4 || ^6.4",
