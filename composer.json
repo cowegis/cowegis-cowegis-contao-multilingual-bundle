@@ -15,8 +15,8 @@
     "ext-pdo": "*",
     "contao-community-alliance/meta-palettes": "^2.0",
     "contao/core-bundle": "^4.13 || ^5.3",
-    "cowegis/cowegis-contao-bundle": "^1.0@dev",
-    "cowegis/cowegis-core": "^1.0@dev",
+    "cowegis/cowegis-contao-bundle": "^1.0",
+    "cowegis/cowegis-core": "^1.0",
     "netzmacht/contao-toolkit": "^3.8 || ^4.0",
     "symfony/config": "^5.4 || ^6.4",
     "symfony/dependency-injection": "^5.4 || ^6.4",
@@ -31,12 +31,6 @@
   "conflict": {
     "contao/manager-plugin": "<2.1 || >= 3.0"
   },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://token:ANU5iWbJuovTQ5j4Mre31crK5Dx36OscQ33uB7tzHtcDvTO55bAkRl8M8P0Mvp9r@packages.netzmacht.de/r/"
-    }
-  ],
   "minimum-stability": "dev",
   "prefer-stable": true,
   "autoload": {
