@@ -14,6 +14,7 @@ use Cowegis\Bundle\ContaoMultilingual\CowegisContaoMultilingualBundle;
 use Cowegis\Bundle\ContaoMultilingual\Model\ControlModel;
 use Cowegis\Bundle\ContaoMultilingual\Model\LayerModel;
 use Cowegis\Bundle\ContaoMultilingual\Model\MarkerModel;
+use Override;
 use Terminal42\DcMultilingualBundle\Terminal42DcMultilingualBundle;
 
 use function array_unshift;
@@ -21,6 +22,7 @@ use function array_unshift;
 final class Plugin implements BundlePluginInterface, ExtensionPluginInterface
 {
     /** {@inheritDoc} */
+    #[Override]
     public function getBundles(ParserInterface $parser): array
     {
         return [
@@ -30,6 +32,7 @@ final class Plugin implements BundlePluginInterface, ExtensionPluginInterface
     }
 
     /** {@inheritDoc} */
+    #[Override]
     public function getExtensionConfig($extensionName, array $extensionConfigs, ContainerBuilder $container): array
     {
         if ($extensionName !== 'cowegis_contao_multilingual') {

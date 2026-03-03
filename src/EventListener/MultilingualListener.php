@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Cowegis\Bundle\ContaoMultilingual\EventListener;
 
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Cowegis\Bundle\ContaoMultilingual\DependencyInjection\Configuration;
 use Netzmacht\Contao\Toolkit\Dca\Manager as DcaManager;
 use Terminal42\DcMultilingualBundle\Driver;
@@ -26,6 +27,7 @@ final readonly class MultilingualListener
     }
 
     /** @SuppressWarnings(PHPMD.Superglobals) */
+    #[AsHook('initializeSystem')]
     public function onInitializeSystem(): void
     {
         foreach ($this->dataContainers as $table => $config) {
@@ -33,6 +35,7 @@ final readonly class MultilingualListener
         }
     }
 
+    #[AsHook('loadDataContainer')]
     public function onLoadDataContainer(string $name): void
     {
         if (! isset($this->dataContainers[$name])) {

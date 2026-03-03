@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    Cowegis\Bundle\ContaoMultilingual\EventListener\MultilingualListener:
+        arguments:
+            $dcaManager: '@netzmacht.contao_toolkit.dca.manager'
+            $dataContainers: '%cowegis_contao_multilingual.data_containers%'
+            $locales: '%cowegis_contao_multilingual.locales%'
+            $fallbackLocale: '%cowegis_contao_multilingual.default_locale%'

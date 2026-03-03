@@ -22,7 +22,12 @@ jobs:
           - php: 8.3
             output: '-o default'
             phpcq_install: 'update'
-
+          - php: 8.4
+            output: '-o default'
+            phpcq_install: 'update'
+          - php: 8.5
+            output: '-o default'
+            phpcq_install: 'update'
     steps:
       - name: Pull source
         uses: actions/checkout@v6
