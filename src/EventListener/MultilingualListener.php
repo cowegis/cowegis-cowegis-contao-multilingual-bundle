@@ -6,7 +6,7 @@ namespace Cowegis\Bundle\ContaoMultilingual\EventListener;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Cowegis\Bundle\ContaoMultilingual\DependencyInjection\Configuration;
-use Netzmacht\Contao\Toolkit\Dca\Manager as DcaManager;
+use Netzmacht\Contao\Toolkit\Dca\DcaManager;
 use Terminal42\DcMultilingualBundle\Driver;
 
 use function is_array;
